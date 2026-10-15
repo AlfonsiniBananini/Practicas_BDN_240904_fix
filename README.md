@@ -1,4 +1,4 @@
-# Prácticas de la Asignatura de Base de Datos en la Nube ☁️☁️
+# Prácticas de la Asignatura de Base de Datos en la Nube ☁️
 
 **Carrera:** Ingeniería en Tecnologías de la Información e Innovación Digital  
 **Docente:** M.T.I. Marco A. Ramírez Hernández  
