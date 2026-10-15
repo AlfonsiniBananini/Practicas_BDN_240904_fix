@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # Servicio de Base de Datos PostgreSQL
+  postgres_240904:
+    image: postgres:15-alpine
+    container_name: postgres_240904
+    restart: always
+    environment:
+      POSTGRES_DB: db_240904
+      POSTGRES_USER: user_240904
+      POSTGRES_PASSWORD: Password240904!
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data_240904:/var/lib/postgresql/data
+
+  # Servicio de Interfaz Web pgAdmin
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_240904
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "marco.ramirez@utxicotepec.edu.mx"
+      PGADMIN_DEFAULT_PASSWORD: "qwerty1234?"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    ports:
+      - "40904:80"
+    depends_on:
+      - postgres_240904
+
+  # Servicio de Base de Datos MySQL
+  mysql_240904:
+    image: mysql:8.0
+    container_name: mysql_240904
+    restart: always
+    environment:
+      MYSQL_DATABASE: db_240904
+      MYSQL_USER: user_240904
+      MYSQL_PASSWORD: Password240904!
+      MYSQL_ROOT_PASSWORD: Password240904!
+    ports:
+      - "40905:3306"
+    volumes:
+      - mysql_data_240904:/var/lib/mysql
+
+volumes:
+  postgres_data_240904:
+    driver: local
+  mysql_data_240904:
+    driver: local
