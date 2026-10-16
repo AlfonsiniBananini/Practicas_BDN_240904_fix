@@ -29,7 +29,7 @@ services:
     depends_on:
       - postgres_240904
 
-  # Servicio de Base de Datos MySQL
+  # Servicio de Base de Datos MySQLL
   mysql_240904:
     image: mysql:8.0
     container_name: mysql_240904
